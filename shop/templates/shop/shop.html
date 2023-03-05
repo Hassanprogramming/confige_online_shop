@@ -1,0 +1,107 @@
+{% extends 'store/main.html' %} {% block content %} {% load static %}
+<!--main section-->
+<section id="main">
+  {% for websites in website %}
+  <!--main content-->
+  <div class="main-text">
+    <h1>{{websites.title}}</h1>
+    <p>{{websites.text}}</p>
+  </div>
+  <!--main img-->
+  <div class="main-img">
+    <img src="{{websites.imageURL}}" alt="T-Shirts" />
+  </div>
+  {% endfor %}
+</section>
+<section id="feature-product">
+  <!--heading-->
+  <h2>Feature Product</h2>
+  <!--box container-->
+  <div class="product-feature-img">
+    {% for product in products %}
+    <div class="feature-product-box">
+      <div class="product-feature-img">
+        <img src="{{product.imageURL}}" alt="" />
+      </div>
+      <div class="product-feature-text-container">
+        <div class="product-feature-text">
+          <strong>{{product.name}}</strong>
+          <span>${{product.price|floatformat:2}}</span>
+        </div>
+        <div class="cart-like">
+          <a href="{{product.id}}"><i class="fas fa-shopping-cart"></i></a>
+          <a href="#"><i class="far fa-heart"></i></a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="second-product">
+    <h2>Feature Product</h2>
+    <div class="product-feature-img">
+      {% for product in lux %}
+      <div class="feature-product-box">
+        <div class="product-feature-img">
+          <img src="{{product.imageURL}}" alt="" />
+        </div>
+        <div class="product-feature-text-container">
+          <div class="product-feature-text">
+            <strong>{{product.name}}</strong>
+            <span>${{product.price|floatformat:2}}</span>
+          </div>
+          <div class="cart-like">
+            <a href="{{product.id}}"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#"><i class="far fa-heart"></i></a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <!--
+  <div class="second-product">
+    <h2>Feature Product</h2>
+    <div class="product-feature-img">
+      {% for product in lux_1 %}
+      <div class="feature-product-box">
+        <div class="product-feature-img">
+          <img src="{{product.imageURL}}" alt="" />
+        </div>
+        <div class="product-feature-text-container">
+          <div class="product-feature-text">
+            <strong>{{product.name}}</strong>
+            <span>${{product.price|floatformat:2}}</span>
+          </div>
+          <div class="cart-like">
+            <a href="{{product.id}}"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#"><i class="far fa-heart"></i></a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="second-product">
+    <h2>Feature Product</h2>
+    <div class="product-feature-img">
+      {% for product in lux_2 %}
+      <div class="feature-product-box">
+        <div class="product-feature-img">
+          <img src="{{product.imageURL}}" alt="" />
+        </div>
+        <div class="product-feature-text-container">
+          <div class="product-feature-text">
+            <strong>{{product.name}}</strong>
+            <span>${{product.price|floatformat:2}}</span>
+          </div>
+          <div class="cart-like">
+            <a href="{{product.id}}"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#"><i class="far fa-heart"></i></a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div> -->
+</section>
+{% endblock %}
